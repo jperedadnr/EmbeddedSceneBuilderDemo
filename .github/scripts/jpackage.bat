@@ -1,5 +1,5 @@
-MODULE_NAME=EmbeddedSceneBuilderDemo
-MAIN_CLASS=com.gluonhq.scenebuilder.embedded.demo.DemoApplication
+set MODULE_NAME=EmbeddedSceneBuilderDemo
+set MAIN_CLASS=com.gluonhq.scenebuilder.embedded.demo.DemoApplication
 
 for /F %%i in ('%JAVA_HOME%\bin\jdeps --module-path target/lib --print-module-deps --ignore-missing-deps -m %$MODULE_NAME%') do SET JDEPS_MODULES=%%i
 
