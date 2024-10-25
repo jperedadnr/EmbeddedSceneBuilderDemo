@@ -75,7 +75,7 @@ jobs:
         run: |
           if [[ ${{ github.event_name }} != 'pull_request' ]]; then
           .github/scripts/jpackage.sh \
-            --type dmg
+            --type dmg \
             --mac-package-identifier com.gluonhq.scenebuilder.embedded.Demo \
             --mac-package-name 'Embedded SB Demo' \
             --mac-package-signing-prefix "${{ env.MACSIGN_PREFIX }}" \
