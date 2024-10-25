@@ -15,7 +15,7 @@ $JAVA_HOME/bin/jlink \
 $JPACKAGE_HOME/bin/jpackage \
 --module-path target/lib \
 --runtime-image target/runtime \
---dest target/install \
+--dest target/installer \
 --module $MODULE_NAME/$MAIN_CLASS \
 --name $MODULE_NAME \
 --description "Embedded Scene Builder Demo" \
