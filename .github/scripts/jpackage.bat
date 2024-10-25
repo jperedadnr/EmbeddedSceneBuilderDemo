@@ -3,14 +3,14 @@ set MAIN_CLASS=com.gluonhq.scenebuilder.embedded.demo.DemoApplication
 
 cp target\demo-%APP_VERSION%.jar target\lib\
 
-for /F %%i in ('%JAVA_HOME%\bin\jdeps --module-path target/lib --print-module-deps --ignore-missing-deps -m %$MODULE_NAME%') do SET JDEPS_MODULES=%%i
-
+for /F %%i in ('%JAVA_HOME%\bin\jdeps --module-path target\lib --print-module-deps --ignore-missing-deps -m %$MODULE_NAME%') do SET JDEPS_MODULES=%%i
+echo 'DEPS: %JDEPS_MODULES%'
 set JAVA_MODULES=javafx.fxml,javafx.media,javafx.swing,javafx.web,java.logging
 
 %JAVA_HOME%\bin\jlink ^
---module-path target/lib ^
+--module-path target\lib ^
 --add-modules %JDEPS_MODULES%,%JAVA_MODULES% ^
---output target/runtime ^
+--output target\runtime ^
 --strip-debug --compress zip-6 --no-header-files --no-man-pages
 
 %JPACKAGE_HOME%\bin\jpackage ^
