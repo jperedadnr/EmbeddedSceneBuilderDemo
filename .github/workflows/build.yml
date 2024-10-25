@@ -116,6 +116,9 @@ jobs:
         run: |
           call .github\scripts\jpackage.bat
           echo path=target\installer\EmbeddedSceneBuilderDemo-${{ env.APP_VERSION }}.msi >> %GITHUB_OUTPUT%
+        env:
+          JPACKAGE_HOME: ${{ env.JAVA_HOME }}
+          APP_VERSION: ${{ env.APP_VERSION }}
 
       - name: Notarize Release Build
         if: github.event_name != 'pull_request' && (matrix.os == 'macos-13' || matrix.os == 'macos-14')
