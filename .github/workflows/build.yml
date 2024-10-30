@@ -55,6 +55,7 @@ jobs:
 
       - name: Cache Maven packages
         uses: actions/cache@v4
+        if: false # while using snapshots
         with:
           path: ~/.m2
           key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
@@ -82,7 +83,7 @@ jobs:
             --mac-signing-key-user-name "${{ env.MACSIGN_USER }}" \
             --mac-sign
           else
-          .github/scripts/build_app_mac.sh \
+          .github/scripts/jpackage.sh \
             --type dmg \
             --mac-package-identifier com.gluonhq.scenebuilder.embedded.Demo \
             --mac-package-name 'Embedded SB Demo'
