@@ -1,4 +1,4 @@
-# EmbeddedSceneBuilderDemo
+# Embedded Scene Builder Demo
 
 Simple JavaFX demo application that embeds Scene Builder Kit
 
@@ -22,11 +22,13 @@ Holds the operations that can be done in the SceneBuilderPane, namely the handle
 
 ### DependencyScanner
 
-Scans the modulepath/classpath of the application, and finds out all possible custom JavaFX controls, and adds them to the Custom Control section of the library.
+Scans the modulepath/classpath of the application, and finds out all possible custom JavaFX controls, and adds them to the Custom section of the library.
 
 ### DemoApplication
 
-Simple JavaFX application with the SceneBuilderPane node and some buttons to interact with it.
+Simple JavaFX application with the SceneBuilderPane node and some buttons to interact with it. 
+
+The app uses [ControlsFX](https://github.com/controlsfx/controlsfx) just to show how the Custom section of the library is generated. 
 
 ## Run
 
